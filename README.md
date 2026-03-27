@@ -59,13 +59,13 @@ Insight utama:
 
 Akses Dashboard:
 
-* Email: [root@mail.com](mailto:root@mail.com)
-* Password: root123
+* Email: arif76440@gmail.com
+* Password: arif123
 
 File dashboard:
 
 * metabase.db.mv.db
-* dashboard.png
+* arif76440-dashboard.png
 
 ---
 
