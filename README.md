@@ -138,13 +138,12 @@ Insight dashboard:
 * Performa akademik rendah berhubungan dengan risiko dropout tinggi
 * Mahasiswa dengan pembayaran tidak lancar lebih berisiko dropout
 
-Akses Dashboard:
+Akses Dashboard Metabase:
 
-Email: root@mail.com  
-Password: root123  
+Email: arif76440@mail.com  
+Password: arif123  
 
-Link Dashboard:
-(Sertakan jika menggunakan Tableau / Looker)
+Link Dashboard streamlit: https://datascience-siswa.streamlit.app/
 
 Dashboard dapat digunakan untuk memonitor performa mahasiswa dan mengidentifikasi faktor yang mempengaruhi dropout.
 
@@ -200,7 +199,6 @@ streamlit run app.py
 ## 14. Struktur Folder
 
 ```
-submission/
 ├── notebook.ipynb
 ├── app.py
 ├── model.pkl
@@ -209,7 +207,7 @@ submission/
 ├── requirements.txt
 ├── README.md
 ├── metabase.db.mv.db
-├── dashboard.png
+├── arif76440-dashboard.png
 ```
 
 ---
@@ -224,5 +222,5 @@ submission/
 
 ## 16. Author
 
-Nama: (Isi Nama Kamu)
+Nama: Muh. Arifandi
 Project: Data Science Submission Dicoding
