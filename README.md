@@ -1,120 +1,154 @@
-# Proyek Akhir: Prediksi Dropout Mahasiswa
+
+# 📘 PROYEK AKHIR: MENYELESAIKAN PERMASALAHAN INSTITUSI PENDIDIKAN
 
 ---
 
-## Business Understanding
+# Business Understanding
 
-Jaya Jaya Institut menghadapi permasalahan tingginya angka mahasiswa yang tidak menyelesaikan studi (dropout). Hal ini berdampak pada kualitas pendidikan serta reputasi institusi.
+Jaya Jaya Institut merupakan institusi pendidikan yang menghadapi permasalahan tingginya angka mahasiswa dropout. Hal ini berdampak pada kualitas lulusan, reputasi institusi, serta efisiensi operasional.
 
-### Permasalahan Bisnis
+Untuk mengatasi permasalahan tersebut, diperlukan solusi berbasis data guna mengidentifikasi mahasiswa yang berpotensi dropout sejak dini.
 
-* Tingginya angka dropout mahasiswa
-* Tidak adanya sistem deteksi dini (early warning system)
+---
+
+## Permasalahan Bisnis
+
+Beberapa permasalahan utama yang dihadapi:
+
+* Tingginya jumlah mahasiswa dropout
+* Tidak adanya sistem prediksi risiko dropout
 * Sulit mengidentifikasi faktor utama penyebab dropout
+* Keterbatasan monitoring performa mahasiswa
 
-### Cakupan Proyek
+---
+
+## Cakupan Proyek
 
 Proyek ini mencakup:
 
 * Data preprocessing
 * Exploratory Data Analysis (EDA)
-* Pembuatan model machine learning
+* Feature selection
+* Modeling machine learning
 * Evaluasi model
-* Deployment dalam bentuk aplikasi Streamlit
-* Pembuatan dashboard monitoring
-
-### Persiapan
-
-Sumber data: Dataset performa mahasiswa
-
-Catatan penting:
-Dataset hanya menggunakan mahasiswa dengan status **Dropout** dan **Graduate**.
-Data dengan status **Enrolled dihapus** agar model melakukan klasifikasi biner secara valid sesuai tujuan proyek.
-
-Setup environment:
-
-```
-pip install pandas numpy matplotlib seaborn scikit-learn streamlit joblib
-```
+* Pembuatan dashboard (Metabase)
+* Deployment aplikasi (Streamlit)
 
 ---
 
-## Business Dashboard
+## Persiapan
 
-Dashboard dibuat menggunakan Metabase untuk membantu monitoring performa mahasiswa.
+### Sumber Data
 
-Visualisasi utama:
-
-1. Distribusi Status Mahasiswa
-2. Rata-rata Nilai Masuk berdasarkan Status
-3. Performa Akademik Semester 1
-4. Status Pembayaran Mahasiswa
-
-Insight utama:
-
-* Sekitar 32.1% mahasiswa mengalami dropout
-* Mahasiswa dengan nilai masuk rendah memiliki risiko lebih tinggi
-* Performa akademik semester awal menjadi indikator kuat
-* Mahasiswa dengan pembayaran tidak lancar lebih berisiko dropout
-
-Akses Dashboard:
-
-* Email: arif76440@gmail.com
-* Password: arif123
-
-File dashboard:
-
-* metabase.db.mv.db
-* arif76440-dashboard.png
+Dataset yang digunakan:
+[Student Performance Dataset](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv)
 
 ---
 
-## Menjalankan Sistem Machine Learning
+### Setup Environment
 
-Model machine learning dibangun menggunakan algoritma Random Forest untuk klasifikasi dropout.
+#### 1. Clone Repository
 
-Cara menjalankan aplikasi:
-
+```bash
+git clone https://github.com/bugiscode/Data-Science
+cd Data-Science
 ```
+
+#### 2. Membuat Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+#### 3. Aktivasi Virtual Environment
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Mac/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+#### 4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 5. Menjalankan Aplikasi
+
+```bash
 streamlit run app.py
 ```
 
-Fitur aplikasi:
+### Python Version
+
+* Python 3.10+
+
+---
+
+# Business Dashboard
+
+Dashboard dibuat menggunakan Metabase untuk membantu monitoring performa mahasiswa.
+
+Fitur dashboard:
+
+* Distribusi status mahasiswa (Graduate vs Dropout)
+* Rata-rata nilai berdasarkan status
+* Hubungan status pembayaran dengan dropout
+* Performa akademik semester awal
+
+Insight utama:
+
+* Mahasiswa dengan nilai rendah cenderung dropout
+* Status pembayaran sangat berpengaruh terhadap dropout
+* Faktor akademik lebih dominan dibanding faktor demografi
+
+Akses dashboard:
+
+* Email: arif76440WGMAIL.COM
+* Password: arif123
+
+---
+
+# Menjalankan Sistem Machine Learning
+
+Prototype machine learning dikembangkan menggunakan Streamlit.
+
+Fitur:
 
 * Input data mahasiswa
-* Prediksi risiko dropout
-* Probabilitas risiko
-* Rekomendasi tindakan
+* Prediksi risiko dropout secara real-time
 
-File yang digunakan:
+Link aplikasi:
+👉 [https://datascience-siswa.streamlit.app/](https://datascience-siswa.streamlit.app/)
 
-* model.pkl
-* scaler.pkl
-* features.pkl
+Cara menjalankan lokal:
 
----
-
-## Conclusion
-
-Model machine learning berhasil memprediksi risiko dropout dengan akurasi sekitar 86%.
-
-Faktor utama yang mempengaruhi dropout:
-
-* Performa akademik mahasiswa
-* Nilai masuk (admission grade)
-* Status pembayaran
-
-Mahasiswa dengan performa akademik rendah dan kendala finansial memiliki risiko dropout lebih tinggi.
-
-Model ini dapat digunakan sebagai sistem early warning untuk membantu institusi dalam melakukan intervensi lebih dini.
+```bash
+streamlit run app.py
+```
 
 ---
 
-## Rekomendasi Action Items
+# Conclusion
 
-* Mengimplementasikan sistem early warning berbasis machine learning
-* Melakukan monitoring performa akademik sejak semester pertama
-* Memberikan program mentoring kepada mahasiswa berisiko
-* Melakukan evaluasi terhadap status pembayaran mahasiswa secara berkala
+Berdasarkan analisis data dan modeling:
 
----
+* Performa akademik semester awal merupakan faktor utama dropout
+* Jumlah mata kuliah yang lulus sangat memengaruhi keberhasilan mahasiswa
+* Status pembayaran memiliki pengaruh signifikan terhadap dropout
+* Admission grade tidak terbukti sebagai faktor dominan
+
+Model machine learning yang dibangun memiliki performa:
+
+* Accuracy: 90%
+* Precision: 91%
+* Recall: 82%
+
+Hasil ini menunjukkan model cukup baik dalam mengidentifikasi mahasiswa berisiko dropout.
