@@ -260,7 +260,7 @@ Model: **Random Forest**
 
 ---
 
-# ⚠Keterbatasan
+# Keterbatasan
 
 * Belum dilakukan hyperparameter tuning
 * Tidak menggunakan data eksternal
