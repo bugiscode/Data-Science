@@ -121,9 +121,7 @@ metabase.db.mv.db
 
 ### Versi Metabase
 
-```
-metabase:v0.46.4
-```
+metabase/metabase:v0.59.4
 
 ---
 
@@ -132,28 +130,25 @@ metabase:v0.46.4
 1. Pull image Metabase:
 
 ```bash
-docker pull metabase/metabase:v0.46.4
-```
+docker pull metabase/metabase:v0.59.4
+````
 
-2. Jalankan container:
-
-```bash
-docker run -d -p 3000:3000 --name metabase metabase/metabase:v0.46.4
-```
-
-3. Copy database ke container:
+2. Pastikan file database berada pada folder yang sama:
 
 ```bash
-docker cp metabase.db.mv.db metabase:/metabase.db/metabase.db.mv.db
+metabase.db.mv.db
 ```
 
-4. Restart container:
+3. Jalankan container dengan mount database:
 
 ```bash
-docker restart metabase
+docker run -d -p 3000:3000 \
+-v $(pwd)/metabase.db.mv.db:/metabase.db/metabase.db.mv.db \
+--name metabase \
+metabase/metabase:v0.59.4
 ```
 
-5. Akses di browser:
+4. Akses Metabase melalui browser:
 
 ```
 http://localhost:3000
